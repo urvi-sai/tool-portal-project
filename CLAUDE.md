@@ -6,7 +6,10 @@
 
 ## Project Structure
 - `README.md`: basic project readme.
-- The project is nearly empty for now. Pages and assets will be added later, and this section should be updated as they are.
+- `index.html`: the portal homepage.
+- `tool-1.html`: placeholder page for "Tool 1 — coming soon".
+- `css/style.css`: shared styles, including the light and dark theme colors.
+- `js/theme.js`: shared light/dark theme toggle.
 
 ## Key Requirements
 1. Every page must be responsive and work on desktop, tablet, and phone.
@@ -23,6 +26,8 @@
 
 ### Phases
 1. **Phase 1:** the portal plus its first tool, the battery life estimator (enter battery size and device power use, get expected battery life).
+   - [x] Portal homepage with a placeholder "Tool 1 — coming soon" card that opens and returns via the navigation.
+   - [ ] Build the battery life estimator.
 2. **Phase 2:** more IIoT tools, added one at a time.
 3. **Phase 3:** polish, such as search or grouping once there are enough tools.
 
