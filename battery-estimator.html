@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Battery Life Estimator | Tool Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+  <script src="js/battery.js" defer></script>
+</head>
+<body>
+  <header>
+    <a class="site-title" href="index.html">Tool Portal</a>
+    <button id="theme-toggle" type="button">Switch to dark theme</button>
+  </header>
+
+  <main>
+    <p><a href="index.html">&larr; Back to all tools</a></p>
+    <h1>Battery Life Estimator</h1>
+    <p>
+      Many sensors sleep most of the time and wake up now and then to take a
+      reading and send it. Enter how your device behaves and this tool
+      estimates how long a battery will last. The numbers below are an example
+      you can change.
+    </p>
+
+    <form id="battery-form" novalidate>
+      <div class="field">
+        <label for="capacity">Battery capacity (mAh)</label>
+        <input id="capacity" type="number" step="any" min="0" value="2000" inputmode="decimal">
+        <p class="hint">Printed on the battery. mAh (milliamp-hours) is how much charge it holds.</p>
+      </div>
+
+      <div class="field">
+        <label for="active-current">Current while awake (mA)</label>
+        <input id="active-current" type="number" step="any" min="0" value="15" inputmode="decimal">
+        <p class="hint">How much electricity the device uses while it is working. mA means milliamps.</p>
+      </div>
+
+      <div class="field">
+        <label for="active-time">Time awake each time (seconds)</label>
+        <input id="active-time" type="number" step="any" min="0" value="5" inputmode="decimal">
+        <p class="hint">How long it stays awake to take and send one reading.</p>
+      </div>
+
+      <div class="field">
+        <label for="sleep-current">Current while asleep (µA)</label>
+        <input id="sleep-current" type="number" step="any" min="0" value="10" inputmode="decimal">
+        <p class="hint">Sleeping uses very little. µA means microamps; 1000 µA is 1 mA.</p>
+      </div>
+
+      <div class="field">
+        <label for="interval">Time between readings (minutes)</label>
+        <input id="interval" type="number" step="any" min="0" value="10" inputmode="decimal">
+        <p class="hint">How often the device wakes up, counted from one wake-up to the next.</p>
+      </div>
+
+      <button id="calculate" type="submit">Estimate battery life</button>
+    </form>
+
+    <div id="result" aria-live="polite"></div>
+  </main>
+</body>
+</html>

@@ -7,7 +7,8 @@
 ## Project Structure
 - `README.md`: basic project readme.
 - `index.html`: the portal homepage.
-- `tool-1.html`: placeholder page for "Tool 1 — coming soon".
+- `battery-estimator.html`: the battery life estimator tool page.
+- `js/battery.js`: the estimator's calculation and form handling.
 - `css/style.css`: shared styles, including the light and dark theme colors.
 - `js/theme.js`: shared light/dark theme toggle.
 
@@ -27,7 +28,7 @@
 ### Phases
 1. **Phase 1:** the portal plus its first tool, the battery life estimator (enter battery size and device power use, get expected battery life).
    - [x] Portal homepage with a placeholder "Tool 1 — coming soon" card that opens and returns via the navigation.
-   - [ ] Build the battery life estimator.
+   - [x] Build the battery life estimator, replacing the placeholder card and page.
 2. **Phase 2:** more IIoT tools, added one at a time.
 3. **Phase 3:** polish, such as search or grouping once there are enough tools.
 
