@@ -1,22 +1,27 @@
-/* Colors live in variables so the light and dark themes only differ here. */
+/* Clean Classroom design: soft blue on near-white, rounded shapes, Nunito.
+   Colors live in variables so the light and dark themes only differ here. */
 :root {
-  --bg: #ffffff;
-  --text: #1a1a1a;
-  --muted: #4d4d4d;
-  --border: #c8c8c8;
-  --card-bg: #f5f5f5;
-  --link: #0b5cad;
+  --bg: #f6f9fe;
+  --surface: #ffffff;
+  --text: #14213d;
+  --muted: #4a5873;
+  --border: #d5deee;
+  --control-border: #8497b8;
+  --link: #1f5fbd;
   --error: #b00020;
+  --shadow: 0 2px 8px rgba(20, 33, 61, 0.08);
 }
 
 :root[data-theme="dark"] {
-  --bg: #121212;
-  --text: #f0f0f0;
-  --muted: #b8b8b8;
-  --border: #444444;
-  --card-bg: #1e1e1e;
-  --link: #7ab7ff;
+  --bg: #0e1a2e;
+  --surface: #16253f;
+  --text: #eaf1ff;
+  --muted: #a9b8d4;
+  --border: #2b3c5e;
+  --control-border: #6f86b3;
+  --link: #8db8ff;
   --error: #ff9a9a;
+  --shadow: none;
 }
 
 * {
@@ -27,8 +32,14 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, sans-serif;
+  font-family: 'Nunito', system-ui, sans-serif;
   line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
 }
 
 a {
@@ -42,30 +53,34 @@ header {
   justify-content: space-between;
   gap: 0.5rem 1rem;
   padding: 1rem;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 
 .site-title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--text);
   text-decoration: none;
 }
 
-#theme-toggle {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--card-bg);
+#theme-toggle,
+#calculate {
+  min-height: 44px;
+  padding: 0 1.1rem;
+  border: 1px solid var(--control-border);
+  border-radius: 999px;
+  background: var(--surface);
   color: var(--text);
   font: inherit;
+  font-weight: 700;
   cursor: pointer;
 }
 
 main {
   max-width: 60rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem 1rem 2.5rem;
 }
 
 .tool-list {
@@ -79,10 +94,11 @@ main {
 .tool-card {
   display: block;
   height: 100%;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--card-bg);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
   color: var(--text);
   text-decoration: none;
 }
@@ -98,8 +114,13 @@ main {
 }
 
 .tool-card p {
-  margin: 0;
+  margin: 0 0 0.75rem;
   color: var(--muted);
+}
+
+.open-tool {
+  font-weight: 700;
+  color: var(--link);
 }
 
 .field {
@@ -108,16 +129,17 @@ main {
 
 label {
   display: block;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 input {
   width: 100%;
   max-width: 20rem;
-  padding: 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--bg);
+  min-height: 44px;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--control-border);
+  border-radius: 10px;
+  background: var(--surface);
   color: var(--text);
   font: inherit;
 }
@@ -128,25 +150,16 @@ input {
   font-size: 0.9rem;
 }
 
-#calculate {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--card-bg);
-  color: var(--text);
-  font: inherit;
-  cursor: pointer;
-}
-
 #result {
   margin-top: 1.5rem;
 }
 
 #result:not(:empty) {
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--card-bg);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 #result.error {
@@ -160,5 +173,5 @@ input {
 
 .big {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 800;
 }

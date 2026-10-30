@@ -16,6 +16,7 @@
 1. Every page must be responsive and work on desktop, tablet, and phone.
 2. Users can toggle between a light and a dark theme. The default is the light theme.
 3. Text must stay easy to read, with good contrast, in both the light and the dark theme.
+4. Visual design is "Clean Classroom": soft blue on near-white, rounded cards and buttons, Nunito font. Theme colors live as variables in `css/style.css`.
 
 ## Feature Plan
 
